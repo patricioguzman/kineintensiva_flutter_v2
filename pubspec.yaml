@@ -1,0 +1,45 @@
+name: kineintensiva_flutter
+description: "Proyecto Flutter Web para KineIntensiva"
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter 
+
+  cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.1.0 
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/fonts/Roboto-Bold.ttf
+    - assets/fonts/Roboto-Regular.ttf
+    - assets/images/contador.jpg
+    - assets/images/docente1.jpg
+    - assets/images/docente2.jpg
+    - assets/images/favicon.png
+    - assets/images/logo.png
+    - assets/images/practica_clinica.jpg
+    - assets/images/slide1.jpg
+    - assets/images/slide2.jpg
+    - assets/images/slide3.jpg
+    - assets/images/VIIcurso.jpg
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
