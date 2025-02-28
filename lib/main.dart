@@ -7,12 +7,15 @@ import 'widgets/blogsection.dart';
 import 'widgets/subscriptionsection.dart';
 import 'widgets/contactsection.dart';
 import 'widgets/footer.dart';
+import 'widgets/course_signup_window.dart';
 
 void main() {
   runApp(KineIntensivaApp());
 }
 
 class KineIntensivaApp extends StatelessWidget {
+  const KineIntensivaApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,8 +23,8 @@ class KineIntensivaApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.orange,
-          primary: Color(0xFFF57C00),
-          secondary: Color(0xFF1976D2),
+          primary: const Color(0xFFF57C00),
+          secondary: const Color(0xFF1976D2),
         ),
         useMaterial3: true,
         fontFamily: 'Roboto',
@@ -40,11 +43,22 @@ class LandingPage extends StatelessWidget {
   final GlobalKey subscriptionKey = GlobalKey();
   final GlobalKey contactKey = GlobalKey();
 
+  LandingPage({super.key});
+
   void _scrollToSection(GlobalKey key, BuildContext context) {
     Scrollable.ensureVisible(
       key.currentContext!,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
+    );
+  }
+
+  void _showCourseSignupWindow(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return const CourseSignupWindow();
+      },
     );
   }
 
@@ -61,11 +75,11 @@ class LandingPage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications, color: Colors.black),
+            icon: const Icon(Icons.notifications, color: Colors.blue),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.person, color: Colors.black),
+            icon: const Icon(Icons.person, color: Colors.blue),
             onPressed: () {},
           ),
         ],
@@ -74,7 +88,7 @@ class LandingPage extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(color: Color(0xFFF57C00)),
               child: Text('Menú', style: TextStyle(color: Colors.white, fontSize: 24)),
             ),
@@ -101,13 +115,18 @@ class LandingPage extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _showCourseSignupWindow(context),
+        backgroundColor: const Color(0xFFF57C00),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 
   Widget _buildDrawerItem(String title, IconData icon, GlobalKey key, BuildContext context) {
     return ListTile(
-      leading: Icon(icon, color: Colors.black),
-      title: Text(title),
+      leading: Icon(icon, color: Colors.blue),
+      title: Text(title, style: const TextStyle(color: Colors.black)),
       onTap: () {
         Navigator.pop(context);
         _scrollToSection(key, context);

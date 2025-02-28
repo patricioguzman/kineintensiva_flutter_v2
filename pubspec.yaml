@@ -1,4 +1,4 @@
-name: kineintensiva_flutter
+name: kineintensiva
 description: "Proyecto Flutter Web para KineIntensiva"
 publish_to: 'none' 
 
@@ -8,9 +8,11 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
+  
   flutter:
     sdk: flutter 
 
+  url_launcher: ^6.0.14
   cupertino_icons: ^1.0.6
   font_awesome_flutter: ^10.1.0 
 
@@ -36,6 +38,16 @@ flutter:
     - assets/images/slide2.jpg
     - assets/images/slide3.jpg
     - assets/images/VIIcurso.jpg
+    - assets/images/testimonios/test1.jpg
+    - assets/images/testimonios/test2.jpg
+    - assets/images/testimonios/test3.jpg
+    - assets/images/testimonios/test4.jpg
+    - assets/images/testimonios/test5.jpg
+    - assets/images/testimonios/test6.jpg
+    - assets/images/testimonios/test7.jpg
+    - assets/images/testimonios/test8.jpg
+    - assets/images/testimonios/test9.jpg
+    - assets/images/testimonios/test10.jpg
 
   fonts:
     - family: Roboto

@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
 
 class SubscriptionSection extends StatelessWidget {
-    const SubscriptionSection({Key? key}) : super(key: key);
+    const SubscriptionSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       color: Colors.grey[200],
       child: Column(
         children: [
-          Text(
+          const Text(
             'A Nuestras Noticias',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
-          TextField(
+          const SizedBox(height: 10),
+          const TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Ingrese su email',
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFFF57C00),
+              backgroundColor: const Color(0xFFF57C00),
             ),
-            child: Text('SUSCRIBIRSE', style: TextStyle(color: Colors.white)),
+            child: const Text('SUSCRIBIRSE', style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
