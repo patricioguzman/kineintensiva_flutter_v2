@@ -25,14 +25,14 @@ class WhyChooseUs extends StatelessWidget {
                 return GridView.count(
                   crossAxisCount: 4,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   children: _buildBenefitItems(),
                 );
               } else if (constraints.maxWidth >= 600) {
                 return GridView.count(
                   crossAxisCount: 2,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   children: _buildBenefitItems(),
                 );
               } else {

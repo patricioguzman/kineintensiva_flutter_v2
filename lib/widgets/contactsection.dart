@@ -12,7 +12,7 @@ class ContactSection extends StatelessWidget {
       throw 'Could not launch $url';
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,8 +30,8 @@ class ContactSection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Row(
-            children: const [
+          const Row(
+            children: [
               Icon(Icons.location_on, color: Colors.white),
               SizedBox(width: 10),
               Text('Dirección: Irarrazaval 5150, Ñuñoa', style: TextStyle(color: Colors.white)),
@@ -65,15 +65,15 @@ class ContactSection extends StatelessWidget {
             children: [
               IconButton(
                 icon: const FaIcon(FontAwesomeIcons.facebook, color: Colors.white),
-                onPressed: () {},
+                onPressed: () => _launchURL('https://www.facebook.com/kineintensiva/'),
               ),
               IconButton(
                 icon: const FaIcon(FontAwesomeIcons.twitter, color: Colors.white),
-                onPressed: () {},
+                onPressed: () => _launchURL('https://twitter.com/kineintensiva'),
               ),
               IconButton(
                 icon: const FaIcon(FontAwesomeIcons.instagram, color: Colors.white),
-                onPressed: () {},
+                onPressed: () => _launchURL('https://www.instagram.com/kineintensiva/'),
               ),
             ],
           ),

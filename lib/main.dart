@@ -10,7 +10,7 @@ import 'widgets/footer.dart';
 import 'widgets/course_signup_window.dart';
 
 void main() {
-  runApp(KineIntensivaApp());
+  runApp(const KineIntensivaApp());
 }
 
 class KineIntensivaApp extends StatelessWidget {
@@ -111,7 +111,7 @@ class LandingPage extends StatelessWidget {
             BlogSection(key: blogKey),
             SubscriptionSection(key: subscriptionKey),
             ContactSection(key: contactKey),
-            Footer(),
+            const Footer(),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:kineintensiva/widgets/course_signup_window.dart'; // Import the CourseSignupWindow
 
 class HeroSection extends StatefulWidget {
   const HeroSection({super.key});
@@ -38,6 +39,14 @@ class _HeroSectionState extends State<HeroSection> {
     super.dispose();
   }
 
+  void _showCourseSignupWindow(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return const CourseSignupWindow();
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +118,7 @@ class _HeroSectionState extends State<HeroSection> {
               ),
               const SizedBox(height: 10),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => _showCourseSignupWindow(context), // Open the signup window
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFF57C00),
                   padding:

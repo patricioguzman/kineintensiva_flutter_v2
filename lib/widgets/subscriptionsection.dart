@@ -1,7 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class SubscriptionSection extends StatelessWidget {
-    const SubscriptionSection({super.key});
+class SubscriptionSection extends StatefulWidget {
+  const SubscriptionSection({super.key});
+
+  @override
+  _SubscriptionSectionState createState() => _SubscriptionSectionState();
+}
+
+class _SubscriptionSectionState extends State<SubscriptionSection> {
+  final TextEditingController emailController = TextEditingController();
+  String message = "";
+
+  Future<void> suscribirse(String email) async {
+    final url = Uri.parse("https://script.google.com/macros/s/AKfycbw3rqt17ZFfnnwVyLdNanVJpJHIX575x6ECRyc0671Q1nYUfoqm0qaVdUvKZNpknadlig/exec"); // Reemplaza con tu URL real
+    
+    try {
+      final response = await http.post(
+        url,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonEncode({"email": email}),
+      );
+
+      if (response.statusCode == 200) {
+        setState(() {
+          message = "¡Suscripción exitosa!";
+        });
+        print("✅ Suscripción exitosa: ${response.body}");
+      } else {
+        setState(() {
+          message = "Error al suscribirse";
+        });
+        print("❌ Error en la suscripción: ${response.statusCode} - ${response.body}");
+      }
+    } catch (error) {
+      setState(() {
+        message = "Error en la solicitud HTTP: $error";
+      });
+      print("⚠️ Error en la solicitud HTTP: $error");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +59,23 @@ class SubscriptionSection extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: emailController,
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               hintText: 'Ingrese su email',
             ),
           ),
           const SizedBox(height: 10),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => suscribirse(emailController.text),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF57C00),
             ),
             child: const Text('SUSCRIBIRSE', style: TextStyle(color: Colors.white)),
           ),
+          const SizedBox(height: 10),
+          Text(message),
         ],
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 class Testimonials extends StatefulWidget {
-  const Testimonials({Key? key}) : super(key: key);
+  const Testimonials({super.key});
 
   @override
   _TestimonialsState createState() => _TestimonialsState();
@@ -114,18 +114,18 @@ class _TestimonialsState extends State<Testimonials> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Testimonios',
             style: TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           SizedBox(
             height: 900, // Increased height from dynamic to 900
             child: PageView.builder(
@@ -149,12 +149,12 @@ class _TestimonialsState extends State<Testimonials> {
                   _pageController.jumpToPage(index);
                 },
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 5),
+                  margin: const EdgeInsets.symmetric(horizontal: 5),
                   width: 12,
                   height: 12,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _currentPage == index ? Color(0xFFF57C00) : Colors.grey,
+                    color: _currentPage == index ? const Color(0xFFF57C00) : Colors.grey,
                   ),
                 ),
               );
@@ -173,9 +173,9 @@ class _TestimonialsState extends State<Testimonials> {
 
   Widget _buildTestimonialItem(Map<String, String> testimonial) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Padding(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         child: Column(
           mainAxisSize: MainAxisSize.min, // Added mainAxisSize
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -187,10 +187,10 @@ class _TestimonialsState extends State<Testimonials> {
                   radius: 90, // Increased size
                 ),
               ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               testimonial['name']!,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -198,18 +198,18 @@ class _TestimonialsState extends State<Testimonials> {
             if (testimonial.containsKey('position'))
               Text(
                 testimonial['position']!,
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: const TextStyle(fontSize: 14, color: Colors.grey),
               ),
             if (testimonial.containsKey('rut'))
               Text(
                 testimonial['rut']!,
-                style: TextStyle(fontSize: 14, color: Colors.grey),
+                style: const TextStyle(fontSize: 14, color: Colors.grey),
               ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             SingleChildScrollView( // Added SingleChildScrollView
               child: Text(
                 testimonial['testimonial']!,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),

@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter 
 
+  http: ^0.13.5
   url_launcher: ^6.0.14
   cupertino_icons: ^1.0.6
   font_awesome_flutter: ^10.1.0 
