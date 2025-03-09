@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter 
 
+  youtube_player_flutter: ^8.1.2
   http: ^0.13.5
   url_launcher: ^6.0.14
   cupertino_icons: ^1.0.6
@@ -49,6 +50,54 @@ flutter:
     - assets/images/testimonios/test8.jpg
     - assets/images/testimonios/test9.jpg
     - assets/images/testimonios/test10.jpg
+    - assets/images/videos.jpg
+    - assets/images/practica/1.jpg
+    - assets/images/practica/2.jpg
+    - assets/images/practica/3.jpg
+    - assets/images/practica/4.jpg
+    - assets/images/practica/5.jpg
+    - assets/images/practica/6.jpg
+    - assets/images/practica/7.jpg
+    - assets/images/practica/8.jpg
+    - assets/images/practica/9.jpg
+    - assets/images/practica/10.jpg
+    - assets/images/practica/11.jpg
+    - assets/images/practica/12.jpg
+    - assets/images/practica/13.jpg
+    - assets/images/practica/14.jpg
+    - assets/images/practica/15.jpg
+    - assets/images/practica/16.jpg
+    - assets/images/practica/17.jpg
+    - assets/images/practica/18.jpg
+    - assets/images/practica/19.jpg
+    - assets/images/docentes/Alvaro-Gajardo-1.jpg
+    - assets/images/docentes/Andrea-Tognarelli-G.jpg
+    - assets/images/docentes/Antonio-Hernandez.jpg
+    - assets/images/docentes/Edison-Montes.jpg
+    - assets/images/docentes/Enrique-Hess.jpg
+    - assets/images/docentes/Felipe-Castillo.jpg
+    - assets/images/docentes/Felipe-Gonzalez.jpg
+    - assets/images/docentes/Guillermo-Caceres-1.jpg
+    - assets/images/docentes/Jaime-Gonzalez-F.jpg
+    - assets/images/docentes/Javier-Salas-1.jpg
+    - assets/images/docentes/Jeannette-Dabanch.jpg
+    - assets/images/docentes/Jorge-Molina.jpg
+    - assets/images/docentes/Juan-Enrique-Lee-1.jpg
+    - assets/images/docentes/Juen-Eduardo-Keymer.jpg
+    - assets/images/docentes/Loreto-Henriquez.jpg
+    - assets/images/docentes/Macarena-Fernandez.jpg
+    - assets/images/docentes/Maria-Pia-Puebla.jpg
+    - assets/images/docentes/Montserrat-Sanchez.jpg
+    - assets/images/docentes/Nicolas-Orellana-1.jpg
+    - assets/images/docentes/Ricardo-Arriagada.jpg
+    - assets/images/docentes/Ricardo-Olguin.jpg
+    - assets/images/docentes/Rodrigo-Adasme-1.jpg
+    - assets/images/docentes/Rodrigo-Adasme.jpg
+    - assets/images/docentes/Sebastian-Ugarte.jpg
+    - assets/images/docentes/Sergio-Diaz.jpg
+    - assets/images/docentes/Vinko-Tomicic.jpg
+    - assets/images/docentes/default.jpg
+
 
   fonts:
     - family: Roboto

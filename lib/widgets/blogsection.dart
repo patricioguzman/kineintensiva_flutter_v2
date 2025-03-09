@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class BlogSection extends StatefulWidget {
   const BlogSection({super.key});
@@ -13,12 +14,18 @@ class _BlogSectionState extends State<BlogSection> {
   int _currentPage = 0;
   late Timer _timer;
 
-  final List<Map<String, String>> blogPosts = [
+  final List<Map<String, dynamic>> blogPosts = [
     {
-      'title': 'Importancia de la Kinesiología Intensiva',
-      'date': '15 de Febrero, 2025',
-      'image': 'assets/images/slide1.jpg',
-      'content': 'Contenido completo de la entrada del blog sobre la importancia de la Kinesiología Intensiva...'
+      'title': 'Videos promocionales',
+      'date': '14 de Mayo, 2019',
+      'image': 'assets/images/videos.jpg',
+      'content': 'Lista de videos promocionales de Kineintensiva.',
+      'youtubeList': [
+        'pv_erOcQa7U', 'hdrChn37Phs', '8oHyZpwm-ms', 'DR0s_TVKWX0', 'jX5sOSKKr8k',
+        'MGnYTR-N4jk', 'U0IC_oaW6vg', '8QLvjAxw8p4', 'GRFkZ9NZJQ0', '9W2QAQk3W90',
+        '-tP3HKFcdb0', '8FvwGibWnXo', 'S7fYtorxvME', 'dKXh2JCVdFM', 'Ao6XYlESEY0',
+        '3XzEzrNSv2M', 'qCb5AUkiA5A'
+      ]
     },
     {
       'title': 'Nuevas Técnicas en Rehabilitación Física',
@@ -59,7 +66,7 @@ class _BlogSectionState extends State<BlogSection> {
     super.dispose();
   }
 
-  void _navigateToBlogDetail(BuildContext context, Map<String, String> post) {
+  void _navigateToBlogDetail(BuildContext context, Map<String, dynamic> post) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -68,72 +75,7 @@ class _BlogSectionState extends State<BlogSection> {
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Noticias del Blog',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 10),
-          LayoutBuilder(
-            builder: (context, constraints) {
-              if (constraints.maxWidth >= 1200) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: blogPosts.map((post) => Expanded(
-                    child: _buildBlogCard(post),
-                  )).toList(),
-                );
-              } else {
-                return SizedBox(
-                  height: 600, // Increased height from 400 to 600
-                  child: PageView.builder(
-                    controller: _pageController,
-                    itemCount: blogPosts.length,
-                    onPageChanged: (index) {
-                      setState(() {
-                        _currentPage = index;
-                      });
-                    },
-                    itemBuilder: (context, index) {
-                      return _buildBlogCard(blogPosts[index]);
-                    },
-                  ),
-                );
-              }
-            },
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(blogPosts.length, (index) {
-              return GestureDetector(
-                onTap: () {
-                  _pageController.jumpToPage(index);
-                },
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 5),
-                  width: 12,
-                  height: 12,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: _currentPage == index ? const Color(0xFFF57C00) : Colors.grey),
-                    color: _currentPage == index ? const Color(0xFFF57C00) : Colors.transparent,
-                  ),
-                ),
-              );
-            }),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBlogCard(Map<String, String> post) {
+  Widget _buildBlogCard(Map<String, dynamic> post) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 10),
       elevation: 4,
@@ -176,10 +118,55 @@ class _BlogSectionState extends State<BlogSection> {
       ),
     );
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Noticias del Blog',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 10),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              if (constraints.maxWidth >= 1200) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: blogPosts.map((post) => Expanded(
+                    child: _buildBlogCard(post),
+                  )).toList(),
+                );
+              } else {
+                return SizedBox(
+                  height: 600,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: blogPosts.length,
+                    onPageChanged: (index) {
+                      setState(() {
+                        _currentPage = index;
+                      });
+                    },
+                    itemBuilder: (context, index) {
+                      return _buildBlogCard(blogPosts[index]);
+                    },
+                  ),
+                );
+              }
+            },
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class BlogDetailPage extends StatelessWidget {
-  final Map<String, String> post;
+  final Map<String, dynamic> post;
 
   const BlogDetailPage({required this.post, super.key});
 
@@ -190,13 +177,12 @@ class BlogDetailPage extends StatelessWidget {
         title: Text(post['title']!),
         backgroundColor: const Color(0xFFF57C00),
       ),
-      body: SingleChildScrollView( // Added SingleChildScrollView
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
-          mainAxisSize: MainAxisSize.min, // Added mainAxisSize
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(post['image']!, fit: BoxFit.cover), // Changed to BoxFit.cover
+            Image.asset(post['image']!, fit: BoxFit.cover),
             const SizedBox(height: 20),
             Text(
               post['title']!,
@@ -212,6 +198,39 @@ class BlogDetailPage extends StatelessWidget {
               post['content']!,
               style: const TextStyle(fontSize: 16),
             ),
+            if (post.containsKey('youtubeList')) ...[
+              const SizedBox(height: 20),
+              const Text(
+                'Videos:',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 10),
+              Column(
+                children: (post['youtubeList'] as List<String>).map((videoId) {
+                  return YoutubePlayerBuilder(
+                    player: YoutubePlayer(
+                      controller: YoutubePlayerController(
+                        initialVideoId: videoId,
+                        flags: const YoutubePlayerFlags(
+                          autoPlay: false,
+                          mute: false,
+                        ),
+                      ),
+                      showVideoProgressIndicator: true,
+                      progressIndicatorColor: Colors.amber,
+                    ),
+                    builder: (context, player) {
+                      return Column(
+                        children: [
+                          player,
+                          const SizedBox(height: 10),
+                        ],
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
+            ],
           ],
         ),
       ),

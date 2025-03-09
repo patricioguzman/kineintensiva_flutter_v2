@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'docentes.dart'; // Importa el archivo de docentes
+import 'practicaclinica.dart'; // Importa el archivo de práctica clínica
 
 class CourseSignupWindow extends StatefulWidget {
   const CourseSignupWindow({super.key});
@@ -26,10 +28,20 @@ class _CourseSignupWindowState extends State<CourseSignupWindow> {
   ];
 
   final List<Widget> _tabContents = [
-    const Center(child: Text('Contenido del Resumen', style: TextStyle(fontSize: 16))),
-    const Center(child: Text('Contenido del Plan de estudios', style: TextStyle(fontSize: 16))),
-    const Center(child: Text('Contenido de Práctica Clínica', style: TextStyle(fontSize: 16))),
-    const Center(child: Text('Contenido de Docentes', style: TextStyle(fontSize: 16))),
+    const Text(
+      'OBJETIVO DEL CURSO\n\n'
+      'Facilitar y contribuir al desarrollo de competencias en kinesiología intensiva expresadas en el perfil de egreso del curso, que permitan un desempeño clínico adecuado a las actuales exigencias de las Unidades de Paciente Crítico del país”.\n\n'
+      'Formar Kinesiólogos en Medicina Intensiva y contribuir en la especialización en esta área de la kinesiología\n'
+      'Preparar Kinesiólogos altamente capacitados en la atención de Unidades de Paciente Crítico\n'
+      'Entregar conocimientos teóricos específicos de Kinesiología Intensiva para optimizar el desempeño profesional en las Unidades de Paciente Crítico\n'
+      'Capacitar al kinesiólogo para que se integre al equipo de las unidades de cuidados intensivos del país.\n'
+      'Desarrollar habilidades prácticas en el desempeño profesional en el área de la terapia respiratoria y la implementación de actividades tendientes a la recuperación funcional de los usuarios hospitalizados en Unidades de Paciente Crítico.\n'
+      'Analizar las posibilidades de investigación científica en la Kinesiología Intensiva.',
+      style: TextStyle(fontSize: 16),
+    ),
+    const Text('Contenido del Plan de estudios', style: TextStyle(fontSize: 16)),
+    const PracticaClinicaSection(), // Usa el nuevo widget
+    const DocentesSection(), // Usa el nuevo widget
   ];
 
   void _launchURL() async {
@@ -43,41 +55,28 @@ class _CourseSignupWindowState extends State<CourseSignupWindow> {
 
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Inscripción al Curso'),
+        backgroundColor: const Color(0xFFF57C00),
       ),
-      child: Container(
-        width: 500,
-        padding: const EdgeInsets.all(20),
-        child: Stack(
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    'assets/images/VIIcurso.jpg',
-                    fit: BoxFit.cover,
-                  ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  'assets/images/VIIcurso.jpg',
+                  fit: BoxFit.cover,
                 ),
-                const SizedBox(height: 20),
-                _buildAccordionMenu(),
-                const SizedBox(height: 20),
-                if (_selectedIndex != -1)
-                  AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    child: SingleChildScrollView(
-                      child: _tabContents[_selectedIndex],
-                    ),
-                  ),
-              ],
-            ),
-            Positioned(
-              top: 10,
-              right: 10,
-              child: GestureDetector(
+              ),
+              const SizedBox(height: 20),
+              _buildAccordionMenu(),
+              const SizedBox(height: 20),
+              GestureDetector(
                 onTap: _launchURL,
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -86,6 +85,7 @@ class _CourseSignupWindowState extends State<CourseSignupWindow> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.assignment, color: Colors.black),
                       SizedBox(width: 5),
@@ -100,8 +100,8 @@ class _CourseSignupWindowState extends State<CourseSignupWindow> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

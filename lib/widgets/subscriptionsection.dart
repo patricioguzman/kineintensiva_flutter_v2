@@ -14,36 +14,33 @@ class _SubscriptionSectionState extends State<SubscriptionSection> {
   String message = "";
 
   Future<void> suscribirse(String email) async {
-    final url = Uri.parse("https://script.google.com/macros/s/AKfycbw3rqt17ZFfnnwVyLdNanVJpJHIX575x6ECRyc0671Q1nYUfoqm0qaVdUvKZNpknadlig/exec"); // Reemplaza con tu URL real
-    
-    try {
-      final response = await http.post(
-        url,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: jsonEncode({"email": email}),
-      );
+final url = Uri.parse(
+  "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbwuyo8c5FNsgtepsoHaUQLMxPDvtOZZOIcmw9HpeOMDa7mwgiuklLm4oqheRmv2Psr7KA/exec"
+);  try {
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({"email": email}),
+    ).then((res) => res); // Forzar seguimiento de redirección
 
-      if (response.statusCode == 200) {
-        setState(() {
-          message = "¡Suscripción exitosa!";
-        });
-        print("✅ Suscripción exitosa: ${response.body}");
-      } else {
-        setState(() {
-          message = "Error al suscribirse";
-        });
-        print("❌ Error en la suscripción: ${response.statusCode} - ${response.body}");
-      }
-    } catch (error) {
+    if (response.statusCode == 200) {
       setState(() {
-        message = "Error en la solicitud HTTP: $error";
+        message = "¡Suscripción exitosa!";
       });
-      print("⚠️ Error en la solicitud HTTP: $error");
+      print("✅ Suscripción exitosa: ${response.body}");
+    } else {
+      setState(() {
+        message = "Error al suscribirse";
+      });
+      print("❌ Error en la suscripción: ${response.statusCode} - ${response.body}");
     }
+  } catch (error) {
+    setState(() {
+      message = "Error en la solicitud HTTP: $error";
+    });
+    print("⚠️ Error en la solicitud HTTP: $error");
   }
-
+}
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -39,12 +39,12 @@ class _HeroSectionState extends State<HeroSection> {
     super.dispose();
   }
 
-  void _showCourseSignupWindow(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return const CourseSignupWindow();
-      },
+  void _openCourseSignupWindow(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const CourseSignupWindow(),
+      ),
     );
   }
 
@@ -118,7 +118,7 @@ class _HeroSectionState extends State<HeroSection> {
               ),
               const SizedBox(height: 10),
               ElevatedButton(
-                onPressed: () => _showCourseSignupWindow(context), // Open the signup window
+                onPressed: () => _openCourseSignupWindow(context), // Open the signup window
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFF57C00),
                   padding:
