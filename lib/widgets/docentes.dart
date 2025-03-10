@@ -104,52 +104,67 @@ class DocentesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Text(
           'Docentes del Curso',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
-        GridView.builder(
+        ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-          ),
           itemCount: docentes.length,
           itemBuilder: (context, index) {
             final docente = docentes[index];
-            return Card(
-              child: Column(
-                children: [
-                  Image.asset(
-                    docente['imagen']!,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: 150, // Tamaño fijo para la imagen
-                  ),
-                  const SizedBox(height: 10),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          docente['nombre']!,
-                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          docente['profesion']!,
-                          style: const TextStyle(fontSize: 14),
-                        ),
-                      ],
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10), // Adjust padding
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min, // Minimize the size of the row
+                  mainAxisAlignment: MainAxisAlignment.center, // Center the content horizontally
+                  children: [
+                    ClipOval(
+                      child: Image.asset(
+                        docente['imagen']!,
+                        fit: BoxFit.cover,
+                        width: 60, // Standardize width for the circular image
+                        height: 60, // Standardize height for the circular image
+                      ),
                     ),
-                  ),
-                ],
+                    const SizedBox(width: 8), // Reduce the horizontal spacing
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0), // Reduce horizontal padding
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min, // Minimize the size of the column
+                          crossAxisAlignment: CrossAxisAlignment.start, // Align text to the start
+                          children: [
+                            Text(
+                              docente['nombre']!,
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                              maxLines: 1, // Limit to 1 line
+                              overflow: TextOverflow.ellipsis, // Add ellipsis for overflow
+                            ),
+                            const SizedBox(height: 5), // Adjust the vertical spacing
+                            Text(
+                              docente['profesion']!,
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(fontSize: 13), // Reduce font size
+                              maxLines: 3, // Limit to 3 lines
+                              overflow: TextOverflow.ellipsis, // Add ellipsis for overflow
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },
