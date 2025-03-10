@@ -6,7 +6,7 @@ class DocentesSection extends StatelessWidget {
   final List<Map<String, String>> docentes = const [
     {
       'nombre': 'Dr. Antonio Hernández M.',
-      'profesion': 'Broncopulmonar. Jefe UCI Adulto Hospital Militar. Profesor Auxiliar Agregado Facultad de Medicina, Universidad de los Andes. Miembro SOCHIMI.',
+      'profesion': 'Broncopulmonar. Jefe UCI Adulto Hospital Militar. Profesor Auxiliar Agregado Facultad de Medicina, Universidad de los Andes. Miembro Soc. Chilena de Medicina Intensiva (SOCHIMI).',
       'imagen': 'assets/images/docentes/Antonio-Hernandez.jpg'
     },
     {
@@ -16,17 +16,17 @@ class DocentesSection extends StatelessWidget {
     },
     {
       'nombre': 'Dr. Sebastián Ugarte U.',
-      'profesion': 'Médico Intensivista, Jefe UPC Clínica Indisa. Past-President SOCHMI. Director Sociedad de Medicina Crítica y de Urgencia.',
+      'profesion': 'Médico Intensivista, Jefe UPC Clínica Indisa. Past-President SOCHMI. Past-president de la Federación Panamericana-Ibérica de Medicina Intensiva. Director Sociedad de Medicina Crítica y de Urgencia (Red de Medicina Intensiva).',
       'imagen': 'assets/images/docentes/Sebastian-Ugarte.jpg'
     },
     {
       'nombre': 'Dr. Enrique Hess M.',
-      'profesion': 'Neurocirujano Clínica las Condes, Hospital Militar de Santiago y HUAP.',
+      'profesion': 'Neurocirujano Hospital del Trabajador, Hospital Militar de Santiago y HUAP.',
       'imagen': 'assets/images/docentes/Enrique-Hess.jpg'
     },
     {
       'nombre': 'Dra. Janette Dabanch.',
-      'profesion': 'Infectóloga, Hospital Militar de Santiago, Directora Nacional Sociedad Chilena de Infectología.',
+      'profesion': 'Infectóloga, Hospital Clínico Universidad de Chile, Directora Nacional Sociedad Chilena de Infectología.',
       'imagen': 'assets/images/docentes/Jeannette-Dabanch.jpg'
     },
     {
@@ -41,64 +41,109 @@ class DocentesSection extends StatelessWidget {
     },
     {
       'nombre': 'Dr. Jaime González F.',
-      'profesion': 'Cirugía de Tórax Hospital Militar de Santiago.',
+      'profesion': 'Cirugía de Tórax Hospital Militar de Santiago, Clínica Universidad de Los Andes.',
       'imagen': 'assets/images/docentes/Jaime-Gonzalez-F.jpg'
     },
     {
+      'nombre': 'Dr. Juan Antonio Espinoza Huircalaf.',
+      'profesion': 'Cirugía Cardiovascular (Hospital Clínico U. de Chile/C. INDISA). Past-President Soc. Chilena de Medicina Crítica y Urgencia (Red Intensiva).',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Dr. Rodrigo Mariño.',
+      'profesion': 'Médico Intensivista UPC adultos Clínica INDISA.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Dr.Cristóbal Balmaceda.',
+      'profesion': 'Cardiólogo Clínica Dávila.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
       'nombre': 'Sr. Nicolás Orellana Solari',
-      'profesion': 'Abogado, Magíster en Derecho Procesal. Profesor Diplomado en Litigación Pontificia Universidad Católica de Chile.',
+      'profesion': 'Abogado, Magíster en Derecho Procesal. Profesor Diplomado en Litigación Pontificia Universidad Católica de Chile. Jefe de estudios Defensoría Penal Pública Metropolitana Sur.',
       'imagen': 'assets/images/docentes/default.jpg'
     },
     {
       'nombre': 'Ps. Andrea Tognarelli Guzmán',
-      'profesion': 'Magíster en Psicología Clínica PUC, Hospital del Trabajador.',
+      'profesion': 'Psicóloga, Magíster en Psicología Clínica PUC, Hospital del Trabajador.',
       'imagen': 'assets/images/docentes/Andrea-Tognarelli-G.jpg'
     },
     {
-      'nombre': 'EU: María Pía Puebla',
-      'profesion': 'Enfermera Clínica Unidad de Tratamiento Intensivo Cardiológico Clínica Las Condes.',
-      'imagen': 'assets/images/docentes/Maria-Pia-Puebla.jpg'
-    },
-    {
-      'nombre': 'Klga. Loreto Henríquez',
-      'profesion': 'UCI Adultos Hospital Padre Hurtado. Especialista en Kinesiología Intensiva y Respiratoria (DENAKE).',
-      'imagen': 'assets/images/docentes/Loreto-Henriquez.jpg'
+      'nombre': 'Klgo. Jorge Molina B.',
+      'profesion': 'Especialista en Kinesiología Respiratoria (DENAKE). UCI Clínica Alemana. Director Carrera de Kinesiología, Universidad del Desarrollo. Presidente DENAKE.',
+      'imagen': 'assets/images/docentes/Jorge-Molina.jpg'
     },
     {
       'nombre': 'Klgo. Eduardo Tognarelli G.',
-      'profesion': 'Especialista DENAKE en Kinesiología Intensiva. Unidad de Cuidado Intensivo Hospital Militar de Santiago.',
+      'profesion': 'Especialista DENAKE en Kinesiología Intensiva. Terapeuta Respiratorio Certificado (CLCPTR). Unidad de Cuidado Intensivo Hospital Militar de Santiago. Past- President de la División de Kinesiología Intensiva de la SOCHMI. Past President Colegio de Kinesiólogos. Docente Clínico Universidad Andres Bello.',
       'imagen': 'assets/images/docentes/default.jpg'
     },
     {
       'nombre': 'Klgo. Juan Eduardo Keymer',
-      'profesion': 'UCI Clínica Alemana. Past-President de la División de Kinesiología Intensiva de la SOCHMI.',
+      'profesion': 'UCI Clínica Alemana, Past-President de la División de Kinesiología Intensiva de la SOCHMI. Docente Kinesiología Universidad del Desarrollo. Especialista Kinesiología Respiratoria e Intensiva (DENAKE).',
       'imagen': 'assets/images/docentes/default.jpg'
     },
     {
-      'nombre': 'Klgo. Jorge Molina B.',
-      'profesion': 'Especialista en Kinesiología Respiratoria (DENAKE). UCI Clínica Alemana.',
-      'imagen': 'assets/images/docentes/Jorge-Molina.jpg'
+      'nombre': 'Klgo. Javier Salas O.',
+      'profesion': 'Unidad Paciente Crítico Hospital Guillermo Grant Benavente, Concepción. Diplomado en Pedagogía en Educación Superior. Diplomado Especialista en Kinesiología Respiratoria. Terapista Respiratorio Certificado (LABPCRT) NBRC.',
+      'imagen': 'assets/images/docentes/default.jpg'
     },
     {
       'nombre': 'Klgo. Rodrigo Adasme J.',
-      'profesion': 'Terapia Respiratoria Universidad Católica. Terapista Respiratorio Certificado ICRC.',
+      'profesion': 'Terapia Respiratoria Universidad Católica. Terapista Respiratorio Certificado ICRC. Instructor PALS.',
       'imagen': 'assets/images/docentes/Rodrigo-Adasme.jpg'
     },
     {
+      'nombre': 'Klgo. Juan E. Lee G.',
+      'profesion': 'Especialista en Kinesiología Intensiva (DENAKE). Miembro SOCHIMI, Red de Medicina Intensiva. UPC Clínica Indisa. Docente Kinesiología UNAB.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Klga. Paola Tapia H.',
+      'profesion': 'Terapeuta Vojta. Especialista en Neurokinesiología y Kinesiología Respiratoria (DENAKE). UCI Pediátrica y Neonatogía, Hospital Militar de Santiago. Instructor EMPACT (Emergency Medical Patients Assessment, Care and Transport). Instructor ACLS ECSI Emergency Care & Safety Institute. Instructor EPC NAEMT Emergency pediatric Care. Instructor AMLS NAEMT.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Klgo. Marcelo Videla Varas',
+      'profesion': 'Unidad de Paciente Crítico Hospital de Linares.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Klgo. Felipe Castillo',
+      'profesion': 'Especialista en Kinesiología Intensiva (DENAKE), Coordinador Kinesiología UPC Clínica Indisa, Red de Medicina intensiva y miembro SOCHIMI.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
       'nombre': 'Klgo. Sergio Díaz San Martín',
-      'profesion': 'Kinesiólogo UPC Hospital Sótero del Río. Especialista DENAKE en Kinesiología Intensiva.',
+      'profesion': 'Kinesiólogo UPC Hospital Sótero del Rio. Especialista DENAKE en Kinesiología Intensiva.',
       'imagen': 'assets/images/docentes/Sergio-Diaz.jpg'
     },
     {
-      'nombre': 'Klgo. Felipe González',
-      'profesion': 'Guía internado clínico UNAB, UPC Clínica Indisa.',
-      'imagen': 'assets/images/docentes/Felipe-Gonzalez.jpg'
+      'nombre': 'Klgo. José Luis Sufán',
+      'profesion': 'Instructor LABIC, Guía internado clínico UNAB, UPC Clínica Indisa.',
+      'imagen': 'assets/images/docentes/default.jpg'
     },
     {
-      'nombre': 'Dra. Macarena Fernández',
-      'profesion': 'Cirujano Abdominal Hospital Militar de Santiago.',
-      'imagen': 'assets/images/docentes/Macarena-Fernandez.jpg'
-    }
+      'nombre': 'Klga. Carolina Silva Gutierrez',
+      'profesion': 'UPC Hospital Padre Hurtado, Clínica Indisa.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Klgo. Daniel San Martín Espinoza',
+      'profesion': 'Kinesiólogo especialista en Neurokinesiología DENAKE. Docente Clínico y postgrado Universidad de Temuco.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Klgo. Hans Báez',
+      'profesion': 'Jefe técnico Kinesiólogos UPC. Hospital del Trabajador.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
+    {
+      'nombre': 'Klgo. Daniel Godoy Olave',
+      'profesion': 'Hospital San Borja Arriarán.',
+      'imagen': 'assets/images/docentes/default.jpg'
+    },
   ];
 
   @override
@@ -118,49 +163,45 @@ class DocentesSection extends StatelessWidget {
           itemBuilder: (context, index) {
             final docente = docentes[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10), // Adjust padding
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
-                  mainAxisSize: MainAxisSize.min, // Minimize the size of the row
-                  mainAxisAlignment: MainAxisAlignment.center, // Center the content horizontally
+                  crossAxisAlignment: CrossAxisAlignment.center, // Asegura alineación vertical correcta
                   children: [
-                    ClipOval(
-                      child: Image.asset(
-                        docente['imagen']!,
-                        fit: BoxFit.cover,
-                        width: 60, // Standardize width for the circular image
-                        height: 60, // Standardize height for the circular image
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ClipOval(
+                        child: Image.asset(
+                          docente['imagen']!,
+                          fit: BoxFit.cover,
+                          width: 50,  // Tamaño fijo para evitar que se expanda
+                          height: 50,
+                        ),
                       ),
                     ),
-                    const SizedBox(width: 8), // Reduce the horizontal spacing
-                    Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4.0), // Reduce horizontal padding
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min, // Minimize the size of the column
-                          crossAxisAlignment: CrossAxisAlignment.start, // Align text to the start
-                          children: [
-                            Text(
-                              docente['nombre']!,
-                              textAlign: TextAlign.left,
-                              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                              maxLines: 1, // Limit to 1 line
-                              overflow: TextOverflow.ellipsis, // Add ellipsis for overflow
-                            ),
-                            const SizedBox(height: 5), // Adjust the vertical spacing
-                            Text(
-                              docente['profesion']!,
-                              textAlign: TextAlign.left,
-                              style: const TextStyle(fontSize: 13), // Reduce font size
-                              maxLines: 3, // Limit to 3 lines
-                              overflow: TextOverflow.ellipsis, // Add ellipsis for overflow
-                            ),
-                          ],
-                        ),
+                    const SizedBox(width: 10), // Espaciado uniforme
+                    Expanded( // Usa Expanded para evitar desbordamientos
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            docente['nombre']!,
+                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            maxLines: 1, // Limita el número de líneas
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(height: 4), // Espacio más pequeño entre nombre y profesión
+                          Text(
+                            docente['profesion']!,
+                            style: const TextStyle(fontSize: 12),
+                            maxLines: 2, // Máximo 2 líneas para mantener un tamaño uniforme
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
                     ),
                   ],

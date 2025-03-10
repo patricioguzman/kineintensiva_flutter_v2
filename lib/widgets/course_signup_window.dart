@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'docentes.dart'; // Importa el archivo de docentes
 import 'practicaclinica.dart'; // Importa el archivo de práctica clínica
+import 'plan_estudios.dart'; // Importa el archivo de plan de estudios
 
 class CourseSignupWindow extends StatefulWidget {
   const CourseSignupWindow({super.key});
@@ -39,7 +40,7 @@ class _CourseSignupWindowState extends State<CourseSignupWindow> {
       'Analizar las posibilidades de investigación científica en la Kinesiología Intensiva.',
       style: TextStyle(fontSize: 16),
     ),
-    const Text('Contenido del Plan de estudios', style: TextStyle(fontSize: 16)),
+    const PlanEstudios(), // Usa el nuevo widget
     const PracticaClinicaSection(), // Usa el nuevo widget
     const DocentesSection(), // Usa el nuevo widget
   ];
